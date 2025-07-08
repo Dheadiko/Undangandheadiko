@@ -1,179 +1,141 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gina & Anggun Wedding</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dhea & Diko - Undangan Pernikahan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: 'Playfair Display', serif;
-      background: #fffaf5;
-      color: #4e3629;
-      overflow-x: hidden;
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: url('nude_gold_flower_bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #4a3e36;
+    }
+    .overlay {
+      background: rgba(255,255,255,0.85);
+      min-height: 100vh;
+      padding: 2em;
     }
     header {
-      height:100vh;
-      background: url('assets/header.jpg') center/cover no-repeat;
-      display:flex; flex-direction:column; justify-content:center; align-items:center;
-      text-align:center; position:relative;
-    }
-    header::after {
-      content:"";
-      position:absolute; inset:0;
-      background:rgba(0,0,0,0.4);
+      text-align: center;
+      padding: 3em 1em;
     }
     header h1 {
-      position:relative;
       font-family: 'Great Vibes', cursive;
-      font-size:4rem;
-      color:#fff;
-      animation:fadeIn 2s ease-out;
+      font-size: 4em;
+      margin: 0;
     }
     header p {
-      position:relative;
-      font-size:1.5rem;
-      color:#f7e8d0;
-      margin-top:10px;
-      animation:fadeIn 3s ease-out;
+      font-size: 1.2em;
+      margin-top: 0.5em;
     }
-    @keyframes fadeIn {
-      from { opacity:0; transform:translateY(30px); }
-      to { opacity:1; transform:translateY(0); }
-    }
-    nav {
-      position:fixed; top:0; width:100%; padding:15px;
-      background:rgba(255, 255, 255,0.8);
-      backdrop-filter:blur(5px);
-      display:flex; justify-content:center; gap:20px;
-      z-index:10;
-    }
-    nav a {
-      text-decoration:none; color:#7a4e3b; font-weight:500;
-      transition:color .3s;
-    }
-    nav a:hover { color:#b3927a; }
     section {
-      padding:80px 20px; text-align:center;
-      max-width:800px; margin:auto;
+      max-width: 800px;
+      margin: auto;
+      padding: 2em 1em;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 2em;
     }
-    h2 {
-      font-family: 'Great Vibes', cursive;
-      font-size:2.8rem; color:#b3927a; margin-bottom:30px;
+    .galeri {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
-    .countdown {
-      font-size:1.6rem; margin:25px 0;
-    }
-    .btn {
-      background:#b68c77;
-      color:#fff;
-      padding:12px 28px;
-      border-radius:20px;
-      text-decoration:none;
-      font-size:1rem;
-      transition:background .3s;
-    }
-    .btn:hover { background:#a6785e; }
-    .gallery {
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-      gap:20px;
-    }
-    .gallery img {
-      width:100%; border-radius:12px;
-      box-shadow:0 5px 15px rgba(0,0,0,0.1);
-      transform:scale(0.95); transition:transform .5s;
-    }
-    .gallery img:hover { transform:scale(1); }
-    iframe { width:100%; height:400px; border-radius:12px; }
-    form {
-      margin-top:30px;
-      display:flex; flex-direction:column; align-items:center;
-      gap:15px;
-    }
-    input,textarea {
-      width:100%; max-width:400px;
-      padding:12px; border:1px solid #ddd;
-      border-radius:8px; font-size:1rem;
+    .galeri img {
+      max-width: 48%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
     footer {
-      padding:40px; background:#f2e9e4;
-      color:#7c5b4c; font-size:0.9rem;
-      text-align:center;
+      text-align: center;
+      font-size: 0.9em;
+      padding: 2em 1em;
+      color: #6a5d4f;
     }
-    audio { display:none; }
+    .countdown {
+      text-align: center;
+      font-size: 1.5em;
+      margin-top: 1em;
+      color: #7a6c5f;
+    }
+    a {
+      color: #b49b82;
+      text-decoration: none;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
 
-<nav>
-  <a href="#acara">Acara</a>
-  <a href="#galeri">Galeri</a>
-  <a href="#lokasi">Lokasi</a>
-  <a href="#rsvp">RSVP</a>
-</nav>
+<div class="overlay">
+  <header>
+    <h1>Dhea & Diko</h1>
+    <p id="toName">Mengundang Anda</p>
+  </header>
 
-<header id="home">
-  <h1>Gina & Anggun</h1>
-  <p>Sabtu, 12 Oktober 2025</p>
-</header>
+  <section>
+    <h2 style="text-align:center;">Assalamu'alaikum Warahmatullahi Wabarakatuh</h2>
+    <p style="text-align:center;">
+      Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan acara pernikahan kami:
+    </p>
+    <h3 style="text-align:center;">Dhea Novitasari & Diko Riansah</h3>
+    <p style="text-align:center;">
+      Minggu, 12 Oktober 2025 <br/>
+      Jomin Timur<br/>
+      <a href="https://maps.app.goo.gl/pruv9NLyjtRwHbC3A" target="_blank">Lihat Lokasi di Google Maps</a>
+    </p>
+    <div class="countdown" id="countdown"></div>
+  </section>
 
-<section id="acara">
-  <h2>Acara Pernikahan</h2>
-  <p><strong>Akad:</strong> 09.00 WIB<br><strong>Resepsi:</strong> 11.00 - selesai</p>
-  <div class="countdown" id="countdown">Loading...</div>
-</section>
+  <section>
+    <h2 style="text-align:center;">Galeri</h2>
+    <div class="galeri">
+      <img src="undangan_galeri_1.jpg"/>
+      <img src="undangan_galeri_2.jpg"/>
+      <img src="undangan_galeri_3.jpg"/>
+      <img src="undangan_galeri_4.jpg"/>
+    </div>
+  </section>
 
-<section id="galeri">
-  <h2>Galeri Prewedding</h2>
-  <div class="gallery">
-    <img src="assets/foto1.jpg" alt="">
-    <img src="assets/foto2.jpg" alt="">
-    <img src="assets/foto3.jpg" alt="">
-  </div>
-</section>
+  <section>
+    <h2 style="text-align:center;">Konfirmasi Kehadiran</h2>
+    <p style="text-align:center;">
+      Mohon konfirmasi kehadiran Anda melalui WhatsApp berikut:<br/>
+      <a href="https://wa.me/6281234567890" target="_blank">Klik untuk RSVP</a>
+    </p>
+  </section>
 
-<section id="lokasi">
-  <h2>Lokasi Acara</h2>
-  <iframe src="https://www.google.com/maps/embed?pb=..." allowfullscreen loading="lazy"></iframe>
-  <p><a class="btn" href="https://maps.app.goo.gl/..." target="_blank">Lihat di Google Maps</a></p>
-</section>
-
-<section id="rsvp">
-  <h2>Konfirmasi Kehadiran</h2>
-  <form>
-    <input type="text" placeholder="Nama" required>
-    <input type="number" placeholder="Jumlah Tamu" min="1" required>
-    <textarea rows="4" placeholder="Ucapan & Doa"></textarea>
-    <button class="btn" type="submit">Kirim</button>
-  </form>
-</section>
-
-<footer>
-  <p>Terima kasih atas doa dan kehadirannya.</p>
-  <p>&copy; Gina & Anggun 2025</p>
-</footer>
+  <footer>
+    Dengan cinta,<br/>
+    <strong>Dhea & Diko</strong>
+  </footer>
+</div>
 
 <audio autoplay loop>
-  <source src="assets/music.mp3" type="audio/mpeg">
+  <source src="https://www.youtube.com/embed/ZeFpigRaXbI" type="audio/mpeg">
 </audio>
 
 <script>
-const cd = document.getElementById('countdown');
-const target = new Date("2025-10-12T09:00:00").getTime();
+  const urlParams = new URLSearchParams(window.location.search);
+  const toName = urlParams.get('to');
+  if (toName) {
+    document.getElementById('toName').textContent = `Kepada Yth. ${toName}`;
+  }
 
-function upd() {
-  const now=Date.now();
-  const d=target-now;
-  if(d<=0) { cd.textContent="Hari Bahagia Telah Tiba!"; return; }
-  const day=Math.floor(d/86400000),
-        hr=Math.floor((d%86400000)/3600000),
-        min=Math.floor((d%3600000)/60000),
-        sec=Math.floor((d%60000)/1000);
-  cd.textContent=`${day}h ${hr}j ${min}m ${sec}d`;
-}
-setInterval(upd,1000); upd();
+  const targetDate = new Date("2025-10-12T00:00:00").getTime();
+  const countdown = document.getElementById("countdown");
+  setInterval(function() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    countdown.textContent = `Menuju Hari Bahagia: ${days} hari lagi`;
+  }, 1000);
 </script>
+
 </body>
 </html>
